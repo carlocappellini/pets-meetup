@@ -19,18 +19,18 @@ public class User {
     private String username;
 
     @NotEmpty(message = "password can't be blank")
-    @Size(min = 8, message = "password must be at least 8 characters long")
+    @Size(min = 8, message ="password must be at least 8 characters long")
     @Column(nullable = false, unique = true)
     @JsonIgnore
     private String password;
-
 
     @NotEmpty(message = "email can't be blank")
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(insertable = false, updatable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
+
 
 
 
@@ -43,10 +43,11 @@ public class User {
         email = copy.email;
         username = copy.username;
         password = copy.password;
+
         date = copy.date;
     }
 
-    public User(long id, String username, String password, String email, Date date) {
+    public User(long id, String username, String password, String email,Date date) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -98,7 +99,8 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-}
 
+
+}
 
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class AuthenticationController {
-    @GetMapping("/login")
+    @GetMapping("/")
     @ResponseBody
     public String ShowLoginForm(){
         return "this will be log in page";
